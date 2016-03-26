@@ -817,8 +817,7 @@
 
                   (reset! socket_
                     (doto ?socket
-                      (aset "onerror"
-                            (onerror-fn))
+                      (aset "onerror" onerror-fn)
 
                       (aset "onmessage" ; Nb receives both push & cb evs!
                         (fn [ws-ev]
